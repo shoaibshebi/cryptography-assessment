@@ -1,7 +1,7 @@
 # Cryptography and Security
 
 <p align="center">
-  <img src="/client/public/app-image1.png" alt="Logo">
+  <img src="./frontend/public/app-image1.png" alt="Logo">
 </p>
 
 <!-- TABLE OF CONTENTS -->
@@ -52,7 +52,7 @@ Yes, it is able to cover the all the planted requests, that I have used in the t
 - We can run the for loop / or brute force till the range of Hex input , so that we control the infinity loop. Of course we will not be able to find the nounce but can save server going down and serving other servable requests.
 - For being on the safe side, I have added the farthest digit to break the loop for saving the server going down, if the server having much load on it.
 
-<!-- GETTING STARTED -->
+<!-- Getting Started -->
 
 ## 🚀 Getting Started
 
@@ -106,6 +106,8 @@ Server is running on `http://localhost:4000/`
 
 ‼️ If some thing dos'nt work, please mail the issue with screen shots on this -> shoaib4030891@gmail.com
 
+<!-- Usage -->
+
 ## 🤸 Usage
 
 In any case you stoped the docker-compose, run this command
@@ -116,6 +118,8 @@ docker-compose up
 NOTE: to stop and remove containers run this
 docker-compose down
 ```
+
+<!-- Tests -->
 
 ## 🧪 Tests
 
@@ -129,7 +133,7 @@ To run the test cases that we have written, please follow these steps
 
 ```
 
-<!-- improvements -->
+<!-- Improvements -->
 
 ## 🔧 Improvements
 
