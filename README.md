@@ -6,27 +6,28 @@
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
-  <summary><h2 style="display: inline-block">Questions</h2></summary>
+  <summary><h2 style="display: inline-block">TABLE OF CONTENTS</h2></summary>
   <ol>
-    <li>
-      <a href="#test-the-solution">How would you test the solution?</a>
-      <ul>
-        <li><a href="#possible-requests">Is it able to cover any possible requests?</a></li>
-      </ul>
-      <ul>
-        <li><a href="#stable-for-long-run">Is it stable for long run?</a></li>
-      </ul>
-    </li>
+      <li>
+        <a href="#Questions">Questions</a>
+      </li>
+        <li><a href="#Getting-Started">Getting Started</a></li>
+        <li><a href="#Usage">Usage</a></li>
+        <li><a href="#Tests">Tests</a></li>
+        <li><a href="#Improvements">Improvements</a></li>
   </ol>
 </details>
 
-<!-- ABOUT THE PROJECT -->
+<!-- Questions -->
+
+## Questions
 
 ### 🧪 How would you test the solution?
 
 - For testing the solution, I have used the JEST , and Supertest to write some tests.
   I have tested on the following inputs and its successfully giving the output:
 
+```sh
 inputHes: 54e604787cbf194841e7b68d7cd28786f6c9a0a3ab9f8b0a0e87cb4387ab0107
 outPutHash: 34b954d14eeb0f6f656f19139de23d096d9cf7db91a211e398a54e6673c2de1b
 nounce: 3
@@ -34,6 +35,7 @@ nounce: 3
 inputHes: 54e604787cbf194841e7b68d7cd28786f6c9a0a3ab9f8b0a0e87cb4387ab0100
 outPushHash: 0f3ba7f34e25c86bfb60e254a941bf183cf35bca73dbe36f6cbab2d580eba6ff
 nounce: 3
+```
 
 - As I've worked on the Blockchain(Web3), please have a look at the portfolio here🚀[https://metaverse-market-virid.vercel.app/], that's why i manupulated the long strings at server side in this way so that the server don't get so much load and easily can do the stuff.
 - Of course, code can be improved so much now, for the sake of load which sever will face if the nounce number is not found in the time.
