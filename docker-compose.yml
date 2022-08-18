@@ -8,7 +8,7 @@ services:
     ports:
       - 4000:4000
     volumes:
-      - /app/node_modules
+      - /my-app/node_modules
       - ./backend:/my-app
     # env_file: .env
     networks:
@@ -25,7 +25,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - /app/node_modules
+      - /my-app/node_modules
       - ./frontend:/my-app
     networks:
       - frontend

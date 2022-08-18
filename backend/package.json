@@ -4,6 +4,7 @@
   "author": "shoaib",
   "license": "MIT",
   "scripts": {
+    "preinstall": "yarn global add nodemon",
     "test": "jest",
     "start": "nodemon server.js"
   },
