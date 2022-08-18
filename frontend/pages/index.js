@@ -12,14 +12,12 @@ export default function Home() {
     nounce: "",
   });
   const approveAndList = async ({ data }) => {
-    console.log("data", data);
     const value = data[0].inputResult;
     const _data = await request("POST", `apiV1/getHash`, {
       inputHex: value,
     });
-    console.log("_data ", _data);
     setHash({
-      hashValue: "0x" + _data.hash,
+      hashValue: _data.hash,
       nounce: _data.nounce,
     });
     dispatch({
