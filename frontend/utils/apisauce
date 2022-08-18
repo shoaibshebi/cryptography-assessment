@@ -1,0 +1,65 @@
+import { create } from "apisauce";
+
+const URL = process.env.NEXT_PUBLIC_SERVER_URL;
+
+const client = create({
+  baseURL: URL,
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+  },
+});
+const request = async (method, path, data) => {
+  let response = undefined;
+  try {
+    if (
+      method === "GET" &&
+      (typeof data === "object" || typeof data === "string")
+    ) {
+      path += "?" + qs.stringify(data);
+    }
+    if (method !== "GET") {
+      response = await client[method.toLowerCase()](path, data);
+    } else {
+      response = await client[method.toLowerCase()](path);
+    }
+  } catch (error) {
+    response = error.response;
+  }
+  if (response.data.code === 400) {
+    let resp = JSON.stringify(response.data);
+    throw Object(JSON.parse(resp));
+  }
+  if (response.data.code >= 400) {
+    if (response.data.code === 401) {
+      let resp = JSON.stringify(response.data);
+      throw Object(JSON.parse(resp));
+    }
+    if (response.data.code === 422) {
+      let resp = JSON.stringify(response.data);
+      throw Object(JSON.parse(resp));
+    }
+    if (response.data.code === 404) {
+      let resp = JSON.stringify(response.data);
+      throw Object(JSON.parse(resp));
+    }
+    if (response.data.code === 500) {
+      // internal server error
+      let resp = JSON.stringify(response.data);
+      throw Object(JSON.parse(resp));
+    }
+    if (response.data.code === 403) {
+      let resp = JSON.stringify(response.data);
+      throw Object(JSON.parse(resp));
+    }
+    let resp = JSON.stringify(response.data);
+    throw Object(`Unhandled Error: ${JSON.parse(resp)}`);
+  }
+  if (response.problem) {
+    let resp = JSON.stringify(response.problem);
+    throw Object(JSON.parse(resp));
+  }
+  return response.data;
+};
+
+export default request;

@@ -1,0 +1,7 @@
+FROM node:14.20.0-alpine
+WORKDIR /my-app
+COPY ./package.json ./
+RUN apk add git
+RUN yarn install
+COPY . .
+CMD ["yarn", "run", "dev"]
